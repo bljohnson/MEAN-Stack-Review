@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="testApp">
   <head>
     <meta charset="utf-8">
     <title>MEAN Stack Review 6-27-16</title>
@@ -9,5 +9,12 @@
   </head>
   <body>
     <h1>MEAN Stack In Class Review</h1>
+    <div ng-controller="TestController">
+      <!-- this button, when moved out of TestController's scope, will not work -->
+      <button type="button" name="button" ng-click=whatAreWeTryingToDo()>Check User Input</button>
+    </div>
+    <!-- this ng-model is available in TestController's scope (in all controllers' scopes... we think. testing needed)-->
+    <input type="text" name="name" value="" placeholder="2-way binding test" ng-model="testBinder">
+    {{testBinder}}
   </body>
 </html>
